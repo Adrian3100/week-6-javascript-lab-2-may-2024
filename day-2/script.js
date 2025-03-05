@@ -70,13 +70,19 @@ function partTwoB () {
   guessNumber = Number(guess);
 
   // 1. check if the number is too low.
-
+  if (guessNumber < answer) {
     // 2. if it is, set the message for too low.
-
+    message = "Too low! Try again.";
+  }
     // 3. if not, set the message for too high.
-
+    else if (guessNumber > answer) {
+      message = "Too high! Try again.";
+    }
     // 4. if not, set the message for correct.
-
+    else {
+      message = "Congratulations! You guessed the correct number.";
+    }
+    messageParagraph.innerHTML = message;
 }
 
 // Example
@@ -105,15 +111,25 @@ function partThreeB () {
   let color;
   color = prompt("What color describes your mood today?");
   // 1. check for your first color
-
+  if (color === "red") {
+    messageParagraph.innerHTML = `Feeling passionate or angry?`;
+  }
     // 2. give the message for this color
-
+    else if (color === "green") {
+      messageParagraph.innerHTML = `You must be feeling calm and refreshed.`;
+    }
   // 3. check for the next color
-
+  else if (color === "purple") {
+    messageParagraph.innerHTML = `Feeling creative and inspired?`;
+  }
     // 4. give the message for the next color
-    
+    else if (color === "black") {
+      messageParagraph.innerHTML = `Are you feeling mysterious or powerful today?`;
+    }
   // 5. otherwise, ask for another color
-
+  else {
+    messageParagraph.innerHTML = `Try another color.`;
+  }
 }
 
 // Example
@@ -139,6 +155,52 @@ function partFourA () {
 // Try to catch as many as you can.
 function partFourB () {
   alert("Try it!");
+  let playerOne, playerTwo, message;
+
+  playerOne = prompt("Player One, choose rock, paper, or scissors.").toLowerCase();
+
+  playerTwo = prompt("Player Two, choose rock, paper, or scissors.").toLowerCase();
+
+
+
+  // Check for a tie
+
+  if (playerOne === playerTwo) {
+
+    message = "It's a tie!";
+
+  } 
+
+  // Winning conditions for Player One
+
+  else if (
+
+    (playerOne === "rock" && playerTwo === "scissors") ||
+
+    (playerOne === "paper" && playerTwo === "rock") ||
+
+    (playerOne === "scissors" && playerTwo === "paper")
+
+  ) {
+
+    message = "Player One wins!";
+
+  } 
+
+  // Otherwise, Player Two wins
+
+  else {
+
+    message = "Player Two wins!";
+
+  }
+
+
+
+  messageParagraph.innerHTML = message;
+
+}
+
 
 }
 

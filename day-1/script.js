@@ -29,16 +29,16 @@ function partOneA () {
 function partOneB () {
   alert("Try it!");
   // Tip calulator at 20%
-  let bill, billNumber, tip;
+  let bill, billNumber, tip, message;
 
   // 1. prompt for the bill
-  
+  bill = prompt("What is your bill?");
   // 2. convert it to number
-  
+  billNumber = Number(bill);
   // 3. calculate tip
-
+  tip = billNumber * 0.20;
   // 4. set the message
-  
+  message = `Your bill is $${billNumber}. You should tip $${tip.toFixed(2)} at 20%.`;
 }
 
 // Example
@@ -60,13 +60,15 @@ function partTwoA () {
 // Try it!
 function partTwoB () {
   alert("Try it!");
+  let bill, billNumber, split, message;
   // 1. prompt for the bill
-
+  bill = prompt("What is your bill?");
   // 2. convert it to number
-
+  billNumber = Number(bill);
   // 3. calculate split bill
-
+  split = billNumber / 4;
   // 4. set the message
+  message = `Your bill is $${billNumber}. Your part of the bill is $${split.toFixed(2)} among four friends.`;
 }
 
 // Example
@@ -102,14 +104,14 @@ function partThreeB () {
   alert("Try it!");
   let bill, billNumber, tip, message;
   // 1. prompt the user for the bill
-  
+  bill = prompt("What is your bill?");
   // 2. convert the bill to a number
-  
+  billNumber = Number(bill);
   // 3. calculate the tip
-  
+  tip = twentyPercentTip(billNumber);
   // 4. create the message
   // HINT: use tipMessage, which is defined above partThreeA
-  
+  message = tipMessage(tip, billNumber, 20);
   // 5. set the message
   messageParagraph.innerHTML = message;
 }
@@ -148,13 +150,13 @@ function partFourB () {
   alert("Try it!");
   let bill, billNumber, split, message;
   // 1. prompt for bill
-
+  bill = prompt("What is your bill?");
   // 2. convert bill to number 
-
+  billNumber = Number(bill);
   // 3. use a function to calculate the split
-
+  spllit = splitBillByFour(billNumber);
   // 4. use a function to create the message
-
+  message =messageForSplitBill(billNumber, split, "four");
   messageParagraph.innerHTML = message;
 }
 
